@@ -7,8 +7,8 @@ class persona():
     def mostrar_detalle(self):
         print(f'Persona: {self.nombre} {self.apellido} {self.edad}')
 
+    def __str__(self):
+        return f'Persona: {self.nombre} {self.apellido} {self.edad}'
 
-
-
-a1=persona('Juan', 'Perez', 28)
+a1 = persona('Juan', 'Perez', 28)
 print(a1)
