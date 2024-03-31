@@ -1,16 +1,18 @@
+from sklearn.linear_model import LinearRegression
+import numpy as np
 
-import torch.nn as nn
+# Datos de ejemplo
+X = np.array([[1], [2], [3], [4]])
+y = np.array([2, 3, 4, 5])
 
-class Softmax(nn.Module):
+# Inicializar el modelo de regresión lineal
+modelo = LinearRegression()
 
-    def __init__(self, in_size, out_size):
+# Entrenar el modelo
+modelo.fit(X, y)
 
-        super(Softmax, self).__init__()
+# Realizar predicciones
+predicciones = modelo.predict([[10]])
 
-        self.linear = nn.Linear(in_size, out_size)
-
-    def forward(self, x):
-
-        out = self.linear(x)
-
-        return out
+# Imprimir las predicciones
+print("Predicción para x = 5:", predicciones)
